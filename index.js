@@ -21,10 +21,10 @@ Aşağıdakileri yap:
   v
 
 */
-var surucuYasi = 20;
+const surucuYasi = 20;
 if (surucuYasi >= 18) {
   console.log(true);
-}
+} else console.log(false);
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
@@ -106,7 +106,7 @@ var bilgisayarTercih = bilgisayarinSecimi();
 
 function oyun(oyuncu, bilgisayar) {
   if (oyuncu === bilgisayar) {
-    return "Beraberlik!";
+    return "Beraberlik";
   } else if (
     (oyuncu === "Taş" && bilgisayar === "Makas") ||
     (oyuncu === "Makas" && bilgisayar === "Kağıt") ||
@@ -136,7 +136,7 @@ console.log(oyun(oyuncuTercih, bilgisayarTercih));
 */
 
 function bilgisayarinSecimi() {
-  let secim = math.random() * 100;
+  let secim = Math.random() * 100;
   let donusenSecim;
 
   if (secim < 33) {
@@ -159,7 +159,7 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 */
 
 function milDonusturucu(km) {
-  return 0.62137 * km;
+  return 0.621371 * km;
 }
 
 //Görev 4b - Santimetreden Feet
@@ -219,17 +219,17 @@ let not = 70;
 
 function notHesapla(not) {
   if (not >= 90 && not <= 100) {
-    console.log("A aldın");
+    return "A aldın";
   } else if (not >= 80 && not < 90) {
-    console.log("B aldın");
+    return "B aldın";
   } else if (not >= 70 && not < 80) {
-    console.log("C aldın");
+    return "C aldın";
   } else if (not >= 60 && not < 70) {
-    console.log("D aldın");
+    return "D aldın";
   } else if (not < 60) {
-    console.log("F aldın");
+    return "F aldın";
   } else {
-    console.log("yanlış not girişi");
+    return "yanlış not girişi";
   }
 }
 
@@ -253,11 +253,11 @@ function sesliHarfSayaci(veri) {
 
   // String üzerinde dolaşarak sesli harfleri sayarız
   for (let i = 0; i < kucukHarf.length; i++) {
-    if (sesliHarfler.includes(lowerCaseStr[i])) {
+    if (sesliHarfler.includes(kucukHarf[i])) {
       sesliHarfSayisi++;
     }
   }
-
+  console.log(sesliHarfSayisi);
   return sesliHarfSayisi;
 }
 
